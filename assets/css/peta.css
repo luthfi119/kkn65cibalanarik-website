@@ -1,0 +1,48 @@
+/* ===============================
+   HERO SECTION
+=================================*/
+/* ---  --- */
+.peta-hero {
+    background-image: url("../img/background.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    min-height: 90vh;
+    transform: skewY(-0,5deg);
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+/* ===============================
+   MAP CONTAINER
+=================================*/
+/* ---  --- */
+.map-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* ===============================
+   RESPONSIVE
+=================================*/
+/* ---  --- */
+@media (max-width: 768px) {
+    .peta-hero {
+        padding: 80px 20px;
+    }
+
+    .map-container {
+        border-radius: 12px;
+    }
+}

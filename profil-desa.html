@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Profil Desa • Desa Cibalanarik</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/profil-desa.css">
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="w-full shadow bg-white sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+            <!-- Logo -->
+            <div class="text-xl font-bold text-[#172d5c]">Desa Cibalanarik</div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+
+                <li><a href="index.html" class="hover:text-[#172d5c]">Beranda</a></li>
+
+                <!-- ACTIVE -->
+                <li><a href="profil-desa.html" class="text-[#172d5c] font-semibold">Profil Desa</a></li>
+
+                <li><a href="pemerintahan.html" class="hover:text-[#172d5c]">Pemerintahan</a></li>
+
+                <li class="relative">
+                    <button id="dropdown-btn" class="hover:text-[#172d5c] flex items-center gap-1">
+                        Potensi Desa ▾
+                    </button>
+                    <ul id="dropdown-menu" class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded hidden">
+                        <li><a href="wisata.html" class="block px-4 py-2 hover:bg-gray-100">Wisata</a></li>
+                        <li><a href="umkm.html" class="block px-4 py-2 hover:bg-gray-100">UMKM</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="peta.html" class="hover:text-[#172d5c]">Peta Digital</a></li>
+                <li><a href="galeri.html" class="hover:text-[#172d5c]">Galeri</a></li>
+                <li><a href="kegiatan-kkn.html" class="hover:text-[#172d5c]">Kegiatan KKN</a></li>
+            </ul>
+
+            <!-- Mobile Button -->
+            <button id="menu-btn" class="md:hidden">
+                <i class="ri-menu-line text-3xl text-green-700"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow">
+            <ul class="flex flex-col text-gray-700 font-medium">
+
+                <li><a href="index.html" class="px-4 py-2 border-b">Beranda</a></li>
+
+                <!-- ACTIVE MOBILE -->
+                <li><a href="profil-desa.html" class="px-4 py-2 border-b text-[#172d5c] font-semibold">Profil Desa</a></li>
+
+                <li><a href="pemerintahan.html" class="px-4 py-2 border-b">Pemerintahan</a></li>
+
+                <li class="border-b">
+                    <details class="px-4 py-2">
+                        <summary>Potensi Desa</summary>
+                        <ul class="ml-4 mt-2">
+                            <li><a href="wisata.html" class="block py-1">Wisata</a></li>
+                            <li><a href="umkm.html" class="block py-1">UMKM</a></li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li><a href="peta.html" class="px-4 py-2 border-b">Peta Digital</a></li>
+                <li><a href="galeri.html" class="px-4 py-2 border-b">Galeri</a></li>
+                <li><a href="kegiatan-kkn.html" class="px-4 py-2 border-b">Kegiatan KKN</a></li>
+            </ul>
+        </div>
+
+        <!-- Script Navbar -->
+        <script>
+            document.getElementById("menu-btn").addEventListener("click", () => {
+                document.getElementById("mobile-menu").classList.toggle("hidden");
+            });
+
+            const dropBtn = document.getElementById("dropdown-btn");
+            const dropMenu = document.getElementById("dropdown-menu");
+
+            dropBtn.addEventListener("click", () => {
+                dropMenu.classList.toggle("hidden");
+            });
+
+            document.addEventListener("click", function (e) {
+                if (!dropBtn.contains(e.target) && !dropMenu.contains(e.target)) {
+                    dropMenu.classList.add("hidden");
+                }
+            });
+        </script>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="profil-hero">
+        <div class="text-center text-white py-20 px-4">
+            <h1 class="text-4xl font-bold mb-4">Profil Desa Cibalanarik</h1>
+            <p class="max-w-2xl mx-auto text-lg opacity-90">
+                Informasi lengkap mengenai sejarah, visi misi, dan kondisi wilayah Desa Cibalanarik.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================== TENTANG DESA ===================== -->
+    <section class="max-w-7xl mx-auto py-16 px-6">
+        <h2 class="section-title">Tentang Desa</h2>
+
+        <p class="text-gray-700 leading-relaxed mt-4">
+            Desa Cibalanarik merupakan salah satu desa yang berada di wilayah Kecamatan Tanjungjaya, Kabupaten Tasikmalaya.
+            Informasi lengkap terkait sejarah, kondisi geografis, pemerintahan, dan kehidupan sosial masyarakat desa ini
+            nantinya akan ditambahkan berdasarkan hasil observasi lapangan saat kegiatan KKN.
+        </p>
+    </section>
+
+    <!-- ===================== VISI MISI ===================== -->
+    <section class="bg-white py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="section-title">Visi & Misi Desa</h2>
+
+            <h3 class="text-xl font-semibold mt-6 text-[#172d5c]">Visi</h3>
+            <p class="text-gray-700 mt-2">“Mewujudkan Desa Cibalanarik Ke Depan Lebih maju Dan Bermartabat, Amanah, Jujur, Transparansi, Dan Berwibawa.”</p>
+
+            <h3 class="text-xl font-semibold mt-8 text-[#172d5c]">Misi</h3>
+            <ul class="list-disc ml-6 mt-2 text-gray-700">
+                <li>Mewujudkan pemerintahan desa yang jujur dan berwibawa dengan pengambilan keputusan yang cepat dan tepat .</li>
+                <li>Mengedepankan kejujuran dan musyawarah mupakat dalam kehidupan sehari-hari baik dengan pemerintahan maupun dengan masyarakat.</li>
+                <li>Meningkatkan profesionalitas dan mengaktipkan seluruh perangkat desa.</li>
+                <li>Mewujudkan sarana prasarana desa yang memadai.</li>
+                <li>Mewujudkan perekonomian dan kesejahteraan warga desa.</li>
+                <li>Meningkatkan pelayanan kesehatan masyarakat desa yang maksimal .</li>
+                <li>Meningkatkan kehidupan desa secara dinamis dalam segi keamanan dan kebudayaan.</li>
+
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===================== SEJARAH ===================== -->
+    <section class="max-w-7xl mx-auto py-16 px-6">
+        <h2 class="section-title">Sejarah Singkat Desa</h2>
+
+        <p class="text-gray-700 leading-relaxed mt-4">
+            Informasi sejarah desa akan ditambahkan berdasarkan dokumentasi desa, wawancara dengan tokoh masyarakat,
+            serta referensi yang tersedia.
+        </p>
+    </section>
+
+</body>
+
+<footer
+    class="bg-[#172d5c] text-white text-center py-4 mt-10 text-sm"> Created by KKN 65 Cibalanarik
+</footer>
+
+</html>

@@ -1,0 +1,68 @@
+/* HERO */
+/* ---  --- */
+.pemerintahan-hero {
+    background-image: url("../img/background.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    min-height: 90vh;
+    transform: skewY(-0,5deg);
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+/* Section Title */
+/* ---  --- */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: #172d5c;
+}
+
+/* Kartu Perangkat Desa */
+/* ---  --- */
+.perangkat-card {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    transition: 0.2s ease;
+}
+
+.perangkat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 16px rgba(0,0,0,0.15);
+}
+
+    .perangkat-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        object-position: center 20%;
+        border-radius: 12px;
+        margin-top: auto;
+        margin-bottom: 12px;
+    }
+
+.perangkat-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #172d5c;
+    margin-bottom: 4px;
+}
+
+.perangkat-card p {
+    color: #555;
+    font-size: 0.95rem;
+}

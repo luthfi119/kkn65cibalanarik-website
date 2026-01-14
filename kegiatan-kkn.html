@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kegiatan KKN • Desa Cibalanarik</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/kegiatan-kkn.css">
+
+    <style>
+        body { font-family: "Poppins", sans-serif; }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="w-full shadow bg-white sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+            <div class="text-xl font-bold text-[#172d5c]">Desa Cibalanarik</div>
+
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+
+                <li><a href="index.html" class="hover:text-[#172d5c]">Beranda</a></li>
+                <li><a href="profil-desa.html" class="hover:text-[#172d5c]">Profil Desa</a></li>
+                <li><a href="pemerintahan.html" class="hover:text-[#172d5c]">Pemerintahan</a></li>
+
+                <!-- Dropdown -->
+                <li class="relative">
+                    <button id="dropdown-btn" class="hover:text-[#172d5c] flex items-center gap-1">
+                        Potensi Desa ▾
+                    </button>
+                    <ul id="dropdown-menu" class="absolute bg-white mt-2 w-40 rounded shadow hidden">
+                        <li><a href="wisata.html" class="block px-4 py-2 hover:bg-gray-100">Wisata</a></li>
+                        <li><a href="umkm.html" class="block px-4 py-2 hover:bg-gray-100">UMKM</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="peta.html" class="hover:text-[#172d5c]">Peta Digital</a></li>
+                <li><a href="galeri.html" class="hover:text-[#172d5c]">Galeri</a></li>
+
+                <li>
+                    <a href="kegiatan-kkn.html" class="text-[#172d5c] font-semibold">Kegiatan KKN</a>
+                </li>
+            </ul>
+
+            <!-- Mobile -->
+            <button id="menu-btn" class="md:hidden">
+                <i class="ri-menu-line text-3xl text-green-700"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow">
+            <ul class="flex flex-col">
+                <li><a href="index.html" class="px-4 py-2 border-b">Beranda</a></li>
+                <li><a href="profil-desa.html" class="px-4 py-2 border-b">Profil Desa</a></li>
+                <li><a href="pemerintahan.html" class="px-4 py-2 border-b">Pemerintahan</a></li>
+
+                <li class="border-b">
+                    <details class="px-4 py-2">
+                        <summary>Potensi Desa</summary>
+                        <ul class="ml-4 mt-2">
+                            <li><a href="wisata.html" class="block py-1">Wisata</a></li>
+                            <li><a href="umkm.html" class="block py-1">UMKM</a></li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li><a href="peta.html" class="px-4 py-2 border-b">Peta Digital</a></li>
+                <li><a href="galeri.html" class="px-4 py-2 border-b">Galeri</a></li>
+                <li><a href="kegiatan-kkn.html" class="px-4 py-2 border-b text-green-700 font-semibold">Kegiatan KKN</a></li>
+            </ul>
+        </div>
+
+        <script>
+            document.getElementById("menu-btn").onclick = () => {
+                document.getElementById("mobile-menu").classList.toggle("hidden");
+            };
+            const dropBtn = document.getElementById("dropdown-btn");
+            const dropMenu = document.getElementById("dropdown-menu");
+            dropBtn.onclick = () => dropMenu.classList.toggle("hidden");
+            document.addEventListener("click", e => {
+                if (!dropBtn.contains(e.target) && !dropMenu.contains(e.target)) dropMenu.classList.add("hidden");
+            });
+        </script>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="kkn-hero">
+        <div class="kkn-hero-content">
+            <h1 class="text-4xl font-bold text-white text-center mb-4">Kegiatan KKN</h1>
+            <p class="text-white text-center opacity-90 max-w-2xl mx-auto">
+            Dokumentasi seluruh kegiatan KKN mahasiswa di Desa Cibalanarik.
+        </p>
+        </div>
+    </section>
+
+    <section class="struktur-kkn">
+
+        <div class="foto-bersama">
+            <img src="assets/img/fotobersama.JPG" alt="Foto Bersama Tim KKN">
+        </div>
+
+    <h2>Struktur Keanggotaan KKN</h2>
+
+    <div class="struktur-grid">
+        <div class="card">
+            <img src="assets/img/koordes.jpeg" alt="Koordes">
+            <h3>Koordes & Wakoordes</h3>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/sekertaris.jpeg" alt="Sekretaris">
+            <h3>Sekretaris</h3>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/bendahara.jpeg" alt="Bendahara">
+            <h3>Bendahara</h3>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/acara.jpeg" alt="Divisi Acara">
+            <h3>Divisi Acara</h3>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/deklog.jpeg" alt="Divisi Logistik">
+            <h3>Divisi Logistik</h3>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/pdd.jpeg" alt="Divisi PDD">
+            <h3>Divisi PDD</h3>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/konsumsi.jpeg" alt="Divisi Konsumsi dan P3K">
+            <h3>Divisi Konsumsi & P3K</h3>
+        </div>
+
+        <div class="card">
+            <img src="assets/img/humas.jpeg" alt="Divisi Humas">
+            <h3>Divisi Humas</h3>
+        </div>
+  </div>
+</section>
+
+
+    <!-- ===================== TIMELINE ===================== -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+
+        <h2 class="text-3xl font-semibold text-center mb-12 text-[#172d5c]">Timeline Kegiatan</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 1 – Kedatangan & Pengenalan Desa</h3>
+                    <p>Pelepasan dan penerimaan di Kecamatan Tanjungjaya dilanjut membagi bansos beras dan minyak</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 2 – Survei Potensi Desa</h3>
+                    <p>Survey dusun cileungsing melakukan observasi serta membagikan bansos berupa beras dan minyak </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 3 – Berinteraksi dengan warga sekitar</h3>
+                    <p>Mengikuti agenda pengajian, bergotong royong dan bermain dengan anak anak sekitar posko</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 4 – Survei Potensi Desa Objek Wisata dan Kunjungan puskesmas</h3>
+                    <p>Melakukan obeservasi objek wisata situ sanghyang dan kunjungan puskesmas</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 5 – Diskusi Internal dan Kerja Bakti dan Sospro kepada Muda Mudi</h3>
+                    <p>Melakuakan diskusi internal setelah dilakukan observasi, mengikuti kerja bakti dan melakukan sospro kepada muda mudi</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 6 – Mengunjungi kantor Desa, Kantor Kecamatan Tanjungjaya dan kunjungan ke Puskesmas</h3>
+                    <p>Meminta data ke kantor desa dan melakukan upacara hari ibu di Kecamatan Tanjungjaya serta bimtek entry data CKG di Puskesmas </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 7 – Mengikuti Pembinaan di Kantor Desa serta Pemberdayaan kepada Masyarakat  </h3>
+                    <p>Mengikuti pembinaan di kantor desa dan melakukan pemberdayaan kepada masyarakat dan mengajar ngaji kepada ada SD</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 8 – Mengikuti Pengajian Rajab di Gor Desa</h3>
+                    <p>Mengikuti pengajian rajaban di gor desa dengan warga desa Cibalanarik</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 9 – Istirahat</h3>
+                    <p>Melakukan persiapan proker TOGA dan diskusi internal</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 10 – Pengajian Rajaban di Dusun Munjul Kampung Cijengkol</h3>
+                    <p>Seluruh mahasisawa KKN mengikuti pengajian rajaban di dusun Munjul Kampung Rancakawung</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 11 – Melaksanakan Survey untuk Program Kerja</h3>
+                    <p>Melaksanakan survey di lokasi yang akan dilaksanakan proker TOGA (Tanaman Obat Keluarga) dan mengunjungi peternakan untuk mendapatkan skam dan kohe dan malamnya dilanjut mengikuti pengajian muda mudi </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 12 – Survei UMKM Desa ke-1</h3>
+                    <p>Melakukan senam pagi bersama warga sekitar dan dilanjut melakuakn survey UMKM desa</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 13 – Survei UMKM Desa ke-2</h3>
+                    <p>Mengikuti upacara peringatan HKSN di Kecamatan Tanjungjaya lalu dilanjutkan dengan melakukan survey lanjutan UMKM desa</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 14 – Melaksanakan Program Kerja (Hilirsasi Singkong Menjadi Bahan Setengah Jadi)</h3>
+                    <p>Seluruh anggota KKN melaksanakan proker hilirsasi singkong menjadi bahan setengah jadi yaitu mengubah singkong menjadi tepung tapioka (aci) kepada warga sekitar</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 15 – Melakukan Pemotretan untuk Bookchapter TOGA</h3>
+                    <p>Seluruh mahasiswa KKN melakukan pemotretan untuk bookchapter TOGA dan malamnya dilanjutkan makan bersama muda - mudi dalam rangka tahun baru</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 16 – Melakukan Rapat Fiksasi Proker TOGA</h3>
+                    <p>Melakukan rapat fiksasi proker TOGA pembahasan mulai dari teknis pelaksanaan hingga akhir</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 17 – Persiapan Logistik Proker</h3>
+                    <p>Dilakukan persiapan logistik untuk proker TOGA</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 18 – Pelaksanaan Program Kerja TOGA</h3>
+                    <p>Melaksanakan proker TOGA dengan dibagi menjadi 2, yaitu untuk wilayah Kampung Cibalanarik dan wilayah Kampung Kebon Kalapa</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 19 – Senam Pagi</h3>
+                    <p>Melaksanakan senam pagi mingguan bersama warga sekitar posko</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 20 – Survei Potensi Desa</h3>
+                    <p>Observasi lokasi wisata, UMKM, dan fasilitas umum desa. (Placeholder)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 21 – Survei Potensi Desa</h3>
+                    <p>Observasi lokasi wisata, UMKM, dan fasilitas umum desa. (Placeholder)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 22 – Survei Potensi Desa</h3>
+                    <p>Observasi lokasi wisata, UMKM, dan fasilitas umum desa. (Placeholder)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 23 – Survei Potensi Desa</h3>
+                    <p>Observasi lokasi wisata, UMKM, dan fasilitas umum desa. (Placeholder)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 24 – Survei Potensi Desa</h3>
+                    <p>Observasi lokasi wisata, UMKM, dan fasilitas umum desa. (Placeholder)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 25 – Survei Potensi Desa</h3>
+                    <p>Observasi lokasi wisata, UMKM, dan fasilitas umum desa. (Placeholder)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 26 – Survei Potensi Desa</h3>
+                    <p>Observasi lokasi wisata, UMKM, dan fasilitas umum desa. (Placeholder)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 27 – Survei Potensi Desa</h3>
+                    <p>Observasi lokasi wisata, UMKM, dan fasilitas umum desa. (Placeholder)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 28 – Survei Potensi Desa</h3>
+                    <p>Observasi lokasi wisata, UMKM, dan fasilitas umum desa. (Placeholder)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 29 – Survei Potensi Desa</h3>
+                    <p>Observasi lokasi wisata, UMKM, dan fasilitas umum desa. (Placeholder)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Hari 30 – Survei Potensi Desa</h3>
+                    <p>Observasi lokasi wisata, UMKM, dan fasilitas umum desa. (Placeholder)</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================== FOTO DOKUMENTASI ===================== -->
+    <section class="max-w-7xl mx-auto px-6 pb-16">
+
+        <h2 class="text-3xl font-semibold text-center mb-10 text-[#172d5c]">Dokumentasi Kegiatan</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 galeri-kkn">
+
+            <div class="kkn-card">
+                <img src="assets/img/day1.jpeg"Kegiatan KKN">
+                <p>Hari 1</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day2.jpeg" alt="Foto Warga">
+                <p>Hari 2</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day3.jpeg" alt="Observasi">
+                <p>Hari 3</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day4.jpeg" alt="Observasi">
+                <p>Hari 4</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day5.jpeg" alt="Observasi">
+                <p>Hari 5</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day6.jpeg" alt="Observasi">
+                <p>Hari 6</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day7.jpeg" alt="Observasi">
+                <p>Hari 7</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day8.jpeg" alt="Observasi">
+                <p>Hari 8</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day8.jpeg" alt="Observasi">
+                <p>Hari 9</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day10.jpeg" alt="Observasi">
+                <p>Hari 10</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day11.jpeg" alt="Observasi">
+                <p>Hari 11</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day12.jpeg" alt="Observasi">
+                <p>Hari 12</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day13.jpeg" alt="Observasi">
+                <p>Hari 13</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day14.jpeg" alt="Observasi">
+                <p>Hari 14</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day15.jpeg" alt="Observasi">
+                <p>Hari 15</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day16.jpeg" alt="Observasi">
+                <p>Hari 16</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/placeholder3.jpg" alt="Observasi">
+                <p>Hari 17</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day18.jpeg" alt="Observasi">
+                <p>Hari 18</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/day19.jpeg" alt="Observasi">
+                <p>Hari 19</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/placeholder3.jpg" alt="Observasi">
+                <p>Hari 20</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/placeholder3.jpg" alt="Observasi">
+                <p>Hari 21</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/placeholder3.jpg" alt="Observasi">
+                <p>Hari 22</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/placeholder3.jpg" alt="Observasi">
+                <p>Hari 23</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/placeholder3.jpg" alt="Observasi">
+                <p>Hari 24</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/placeholder3.jpg" alt="Observasi">
+                <p>Hari 25</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/placeholder3.jpg" alt="Observasi">
+                <p>Hari 26</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/placeholder3.jpg" alt="Observasi">
+                <p>Hari 27</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/placeholder3.jpg" alt="Observasi">
+                <p>Hari 28</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/placeholder3.jpg" alt="Observasi">
+                <p>Hari 29</p>
+            </div>
+
+            <div class="kkn-card">
+                <img src="assets/img/placeholder3.jpg" alt="Observasi">
+                <p>Hari 30</p>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+<footer
+    class="bg-[#172d5c] text-white text-center py-4 mt-10 text-sm"> Created by KKN 65 Cibalanarik
+</footer>
+
+</html>

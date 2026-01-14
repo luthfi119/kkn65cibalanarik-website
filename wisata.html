@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Wisata Situ Sanghyang • Desa Cibalanarik</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS khusus wisata -->
+    <link rel="stylesheet" href="assets/css/wisata.css">
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- ===================== NAVBAR FINAL ===================== -->
+    <header class="w-full shadow bg-white sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+            <div class="text-xl font-bold text-[#172d5c]">Desa Cibalanarik</div>
+
+            <!-- Menu Desktop -->
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+
+                <li><a href="index.html" class="hover:text-[#172d5c]">Beranda</a></li>
+                <li><a href="profil-desa.html" class="hover:text-[#172d5c]">Profil Desa</a></li>
+                <li><a href="pemerintahan.html" class="hover:text-[#172d5c]">Pemerintahan</a></li>
+
+                <li class="relative">
+                    <button id="dropdown-btn" class="hover:text-[#172d5c] flex items-center gap-1 text-[#172d5c] font-semibold">
+                        Potensi Desa ▾
+                    </button>
+
+                    <ul id="dropdown-menu"
+                        class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded hidden">
+                        <li>
+                            <a href="wisata.html"
+                               class="block px-4 py-2 bg-gray-100 text-[#172d5c] font-semibold">
+                                Wisata
+                            </a>
+                        </li>
+                        <li>
+                            <a href="umkm.html" class="block px-4 py-2 hover:bg-gray-100">
+                                UMKM
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="peta.html" class="hover:text-[#172d5c]">Peta Digital</a></li>
+                <li><a href="galeri.html" class="hover:text-[#172d5c]">Galeri</a></li>
+                <li><a href="kegiatan-kkn.html" class="hover:text-[#172d5c]">Kegiatan KKN</a></li>
+            </ul>
+
+            <!-- Mobile Button -->
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <i class="ri-menu-line text-3xl text-green-700"></i>
+            </button>
+
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow">
+            <ul class="flex flex-col text-gray-700 font-medium">
+
+                <li><a href="index.html" class="px-4 py-2 border-b">Beranda</a></li>
+                <li><a href="profil-desa.html" class="px-4 py-2 border-b">Profil Desa</a></li>
+                <li><a href="pemerintahan.html" class="px-4 py-2 border-b">Pemerintahan</a></li>
+
+                <li class="border-b">
+                    <details class="px-4 py-2" open>
+                        <summary class="cursor-pointer text-[#172d5c] font-semibold">Potensi Desa</summary>
+                        <ul class="mt-2 ml-4">
+                            <li>
+                                <a href="wisata.html"
+                                   class="block py-1 text-[#172d5c] font-semibold">
+                                    Wisata
+                                </a>
+                            </li>
+                            <li><a href="umkm.html" class="block py-1">UMKM</a></li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li><a href="peta.html" class="px-4 py-2 border-b">Peta Digital</a></li>
+                <li><a href="galeri.html" class="px-4 py-2 border-b">Galeri</a></li>
+                <li><a href="kegiatan-kkn.html" class="px-4 py-2 border-b">Kegiatan KKN</a></li>
+
+            </ul>
+        </div>
+
+        <!-- Script -->
+        <script>
+            document.getElementById('menu-btn').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+
+            const dropBtn = document.getElementById("dropdown-btn");
+            const dropMenu = document.getElementById("dropdown-menu");
+
+            dropBtn.addEventListener("click", () => {
+                dropMenu.classList.toggle("hidden");
+            });
+
+            document.addEventListener("click", function(e) {
+                if (!dropBtn.contains(e.target) && !dropMenu.contains(e.target)) {
+                    dropMenu.classList.add("hidden");
+                }
+            });
+        </script>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="wisata-hero flex items-center justify-center text-center text-white">
+        <div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Situ Sanghyang</h1>
+            <p class="max-w-2xl mx-auto text-lg opacity-90">
+                Danau alami yang menenangkan, menjadi ikon wisata Desa Cibalanarik.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================== STORYTELLING ===================== -->
+    <section class="max-w-7xl mx-auto py-16 px-6">
+        <h2 class="section-title">Cerita dari Situ Sanghyang</h2>
+
+        <p class="text-gray-700 leading-relaxed mt-4">
+            Situ Sanghyang adalah sebuah danau alami yang menjadi objek wisata alam di Kabupaten Tasikmalaya, Jawa Barat, tepatnya berada di Desa Cibalanarik
+            Kecamatan Tanjungjaya. Danau ini dikenal sebagai salah satu destinasi wisata alam yang populer di wilayah selatan Jawa Barat karena pemandangannya
+            yang asri dan suasana tenangnya yang cocok untuk rekreasi maupun relaksasi.
+        </p>
+
+        <p class="text-gray-700 leading-relaxed mt-4">
+            Sejarah Situ Sanghyang Tasikmalaya kaya akan legenda, terutama tentang terbentuknya danau dari kesaktian Prabu Sanghyang Borosngora saat terjadi kekeringan,
+            yang menancapkan tongkatnya hingga muncullah mata air deras, menjadi danau yang kini disucikan dan menjadi objek wisata. Legenda lain
+            menyebutkan tempat ini dulunya Kerajaan Saunggtang yang tenggelam akibat kutukan karena penculikan putri, di mana Resi Galunggung mengubah perkampungan menjadi danau setelah menancapkan tujuh lidi yang tak bisa dicabut. Situ Sanghyang kini berfungsi sebagai tempat spiritual dan wisata, dengan tradisi seperti Ngalokat Cai
+        </p>
+    </section>
+
+    <!-- ===================== KEUNGGULAN ===================== -->
+    <section class="bg-white py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="section-title">Mengapa Wajib Dikunjungi?</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+
+                <div class="benefit-card">
+                    <i class="ri-landscape-line text-4xl text-green-700 mb-3"></i>
+                    <h3 class="text-lg font-semibold">Pemandangan Asri</h3>
+                    <p class="text-gray-600 text-sm">Situ Sanghyang menyuguhkan pemandangan alam yang masih alami dan hijau, dikelilingi pepohonan
+                        rindang serta hamparan air danau yang tenang. Keasrian lingkungan di sekitar situ membuat pengunjung
+                        bisa menikmati udara segar dan suasana pedesaan yang jauh dari hiruk-pikuk perkotaan.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <i class="ri-sailboat-line text-4xl text-green-700 mb-3"></i>
+                    <h3 class="text-lg font-semibold">Suasana Tenang</h3>
+                    <p class="text-gray-600 text-sm">Salah satu daya tarik utama Situ Sanghyang adalah suasananya yang tenang dan menenangkan.
+                        Gemericik air dan hembusan angin sejuk menciptakan rasa nyaman, sehingga tempat
+                        ini sangat cocok untuk melepas penat, bersantai bersama keluarga, maupun sekadar menikmati ketenangan alam.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <i class="ri-camera-line text-4xl text-green-700 mb-3"></i>
+                    <h3 class="text-lg font-semibold">Spot Foto Alami</h3>
+                    <p class="text-gray-600 text-sm">Situ Sanghyang juga memiliki banyak spot foto alami dengan latar danau, pepohonan, serta cahaya matahari yang indah terutama di pagi dan sore hari.
+                        Keindahan alam yang masih terjaga menjadikan tempat ini favorit untuk
+                        berfoto, baik untuk dokumentasi pribadi maupun promosi wisata desa.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== GALERI ===================== -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="section-title">Galeri Situ Sanghyang</h2>
+
+     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+
+           <div class="galeri-item bg-white rounded-xl shadow-md overflow-hidden border">
+                <img src="assets/img/galeri1.JPG" alt="Foto Desa" class="w-full h-full object-cover">
+           </div>
+
+           <div class="galeri-item bg-white rounded-xl shadow-md overflow-hidden border">
+                <img src="assets/img/galeri2.JPG" alt="Foto Desa" class="w-full h-full object-cover">
+           </div>
+
+           <div class="galeri-item bg-white rounded-xl shadow-md overflow-hidden border">
+                <img src="assets/img/galeri3.JPG" alt="Foto Desa" class="w-full h-full object-cover">
+           </div>
+
+           <div class="galeri-item bg-white rounded-xl shadow-md overflow-hidden border">
+                <img src="assets/img/galeri4.JPG" alt="Foto Desa" class="w-full h-full object-cover">
+           </div>
+
+           <div class="galeri-item bg-white rounded-xl shadow-md overflow-hidden border">
+                <img src="assets/img/galeri5.JPG" alt="Foto Desa" class="w-full h-full object-cover">
+           </div>
+
+           <div class="galeri-item bg-white rounded-xl shadow-md overflow-hidden border">
+                <img src="assets/img/galeri6.JPG" alt="Foto Desa" class="w-full h-full object-cover">
+           </div>
+     </div>
+
+
+    </section>
+
+    <!-- ===================== RUTE ===================== -->
+    <section class="bg-white py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="section-title">Rute Perjalanan</h2>
+
+            <p class="text-gray-700 leading-relaxed mt-4">
+                Patokan ketika ada terminal Cibalanarik, masuk gapura Cibalanarik dan terus maju mengikuti jalur saja nanti akan sampai di Situ Sanghyang.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================== MAPS ===================== -->
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+        <h2 class="section-title">Lokasi Wisata</h2>
+
+        <div class="mt-6 rounded-xl overflow-hidden shadow-lg">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.572030575137!2d108.14795747357347!3d-7.40175487287883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f56027396d917%3A0x1653bf4acf500d2!2sSitu%20Sanghyang!5e0!3m2!1sid!2sid!4v1768041597092!5m2!1sid!2sid"
+                class="w-full h-80 border-0"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+             
+    </section>
+
+</body>
+
+<footer
+    class="bg-[#172d5c] text-white text-center py-4 mt-10 text-sm"> Created by KKN 65 Cibalanarik
+</footer>
+
+</html>

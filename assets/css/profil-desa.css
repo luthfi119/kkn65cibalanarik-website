@@ -1,0 +1,36 @@
+/* HERO */
+/* ---  --- */
+.profil-hero {
+    background-image: url("../img/background.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    min-height: 90vh;
+    transform: skewY(-0,5deg);
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+.profil-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Judul Section */
+/* ---  --- */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #172d5c;
+    margin-bottom: 10px;
+}

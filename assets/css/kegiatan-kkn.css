@@ -1,0 +1,220 @@
+/* ===============================
+   HERO
+=================================*/
+/* ---  --- */
+.kkn-hero {
+    background-image: url("../img/background.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    min-height: 90vh;
+    transform: skewY(-0,5deg);
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+.foto-bersama {
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.foto-bersama img {
+  width: 100%;
+  object-position: center 50%;
+  height: 320px;        /* landscape */
+  object-fit: cover;
+}
+
+
+/* <===========STRUKTUR KKN ===========>*/
+.struktur-kkn {
+  padding: 60px 20px;
+  background: #f9fafb;
+}
+
+.struktur-kkn h2 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #172d5c;
+}
+
+.struktur-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  color: #172d5c;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===============================
+   TIMELINE WRAPPER
+=================================*/
+/* ---  --- */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    border-left: 4px solid #8bb4cd;
+    margin-left: 20px;
+}
+
+/* ===============================
+   TIMELINE ITEM
+=================================*/
+/* ---  --- */
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-dot {
+    width: 18px;
+    height: 18px;
+    background-color: #8bb4cd;
+    border-radius: 50%;
+    position: absolute;
+    left: -39px;
+    top: 4px;
+    border: 3px solid white;
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+
+.timeline-content {
+    background: white;
+    padding: 16px 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.timeline-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #172d5c;
+    margin-bottom: 6px;
+}
+
+.timeline-content p {
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.timeline-content:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* ===============================
+   DOKUMENTASI FOTO
+=================================*/
+/* ---  --- */
+.galeri-kkn {
+    display: grid;
+    gap: 1px;
+}
+
+.kkn-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.10);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kkn-card img {
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.kkn-card p {
+    padding: 12px 15px;
+    font-size: 1.2rem;
+    color: #172d5c;
+    font-weight: bold;
+    text-align: center;
+}
+
+.kkn-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+}
+
+.kkn-card:hover img {
+    transform: scale(1.07);
+}
+
+/* ===============================
+   RESPONSIVE
+=================================*/
+/* ---  --- */
+@media (max-width: 768px) {
+
+    .kkn-hero {
+        padding: 80px 20px;
+    }
+
+    .timeline {
+        margin-left: 10px;
+        padding-left: 25px;
+    }
+
+    .timeline-dot {
+        left: -34px;
+    }
+
+    .kkn-card img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-content {
+        padding: 14px 16px;
+    }
+}

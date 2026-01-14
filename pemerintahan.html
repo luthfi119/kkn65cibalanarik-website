@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pemerintahan Desa • Desa Cibalanarik</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS khusus halaman ini -->
+    <link rel="stylesheet" href="assets/css/pemerintahan.css">
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- ===================== NAVBAR FINAL ===================== -->
+    <header class="w-full shadow bg-white sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+            <!-- Logo -->
+            <div class="text-xl font-bold text-[#172d5c]">Desa Cibalanarik</div>
+
+            <!-- Menu Desktop -->
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+
+                <li><a href="index.html" class="hover:text-[#172d5c]">Beranda</a></li>
+                <li><a href="profil-desa.html" class="hover:text-[#172d5c]">Profil Desa</a></li>
+                <li><a href="pemerintahan.html" class="text-[#172d5c] font-semibold">Pemerintahan</a></li>
+
+                <!-- DROPDOWN DESKTOP -->
+                <li class="relative">
+                    <button id="dropdown-btn" class="hover:text-[#172d5c] flex items-center gap-1">
+                        Potensi Desa ▾
+                    </button>
+                    <ul id="dropdown-menu" class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded hidden">
+                        <li><a href="wisata.html" class="block px-4 py-2 hover:bg-gray-100">Wisata</a></li>
+                        <li><a href="umkm.html" class="block px-4 py-2 hover:bg-gray-100">UMKM</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="peta.html" class="hover:text-[#172d5c]">Peta Digital</a></li>
+                <li><a href="galeri.html" class="hover:text-[#172d5c]">Galeri</a></li>
+                <li><a href="kegiatan-kkn.html" class="hover:text-[#172d5c]">Kegiatan KKN</a></li>
+            </ul>
+
+            <!-- Mobile Button -->
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-700" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow">
+            <ul class="flex flex-col text-gray-700 font-medium">
+
+                <li><a href="index.html" class="px-4 py-2 border-b">Beranda</a></li>
+                <li><a href="profil-desa.html" class="px-4 py-2 border-b">Profil Desa</a></li>
+                <li><a href="pemerintahan.html" class="px-4 py-2 border-b text-green- font-semibold">Pemerintahan</a></li>
+
+                <li class="border-b">
+                    <details class="px-4 py-2">
+                        <summary class="cursor-pointer">Potensi Desa</summary>
+                        <ul class="mt-2 ml-4">
+                            <li><a href="wisata.html" class="block py-1">Wisata</a></li>
+                            <li><a href="umkm.html" class="block py-1">UMKM</a></li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li><a href="peta.html" class="px-4 py-2 border-b">Peta Digital</a></li>
+                <li><a href="galeri.html" class="px-4 py-2 border-b">Galeri</a></li>
+                <li><a href="kegiatan-kkn.html" class="px-4 py-2 border-b">Kegiatan KKN</a></li>
+            </ul>
+        </div>
+
+        <!-- SCRIPT NAVBAR -->
+        <script>
+            // Mobile menu toggle
+            document.getElementById('menu-btn').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+
+            // Desktop dropdown
+            const dropBtn = document.getElementById("dropdown-btn");
+            const dropMenu = document.getElementById("dropdown-menu");
+
+            dropBtn.addEventListener("click", () => {
+                dropMenu.classList.toggle("hidden");
+            });
+
+            // Close dropdown if click outside
+            document.addEventListener("click", function(e) {
+                if (!dropBtn.contains(e.target) && !dropMenu.contains(e.target)) {
+                    dropMenu.classList.add("hidden");
+                }
+            });
+        </script>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="pemerintahan-hero">
+        <div class="text-center text-white px-6">
+            <h1 class="text-4xl font-bold mb-4">Pemerintahan Desa Cibalanarik</h1>
+            <p class="max-w-2xl mx-auto text-lg opacity-90">
+                Struktur pemerintahan desa beserta perangkat yang bertugas dalam pelayanan masyarakat.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================== KEPALA DESA ===================== -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+        <h2 class="section-title">Kepala Desa</h2>
+
+        <div class="flex flex-col md:flex-row items-center gap-10 mt-10">
+            <img src="assets/img/bu kuwu.png"
+                class="w-60 h-60 object-cover rounded-xl shadow-md" alt="Foto Kepala Desa">
+
+            <div>
+                <h3 class="text-2xl font-bold text-[#172d5c] mb-3">Juju Juhariah, A.Md.</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Beliau merupakan seorang kepala desa di Desa Cibalanarik.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PERANGKAT DESA ===================== -->
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+        <h2 class="section-title">Struktur Perangkat Desa</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+
+            <div class="perangkat-card">
+                <img src="assets/img/sekdes.jpeg" alt="Sekretaris Desa">
+                <h3>Sekretaris Desa</h3>
+                <p>Sansan Solehudin</p>
+            </div>
+
+            <div class="perangkat-card">
+                <img src="assets/img/kaur keuangan.jpeg" alt="Kaur Keuangan">
+                <h3>Kaur Keuangan</h3>
+                <p>Ema Mayasari</p>
+            </div>
+
+            <div class="perangkat-card">
+                <img src="assets/img/kaur perencanaan.jpeg" alt="Kaur Perencanaan">
+                <h3>Kaur Perencanaan</h3>
+                <p>Diki Badrussalam</p>
+            </div>
+
+            <div class="perangkat-card">
+                <img src="assets/img/kasek pemerintahan.jpeg" alt="Kasi Pemerintahan">
+                <h3>Kasi Pemerintahan</h3>
+                <p>Yoyo Sunaryo</p>
+            </div>
+
+            <div class="perangkat-card">
+                <img src="assets/img/kasi pelayanan.jpeg" alt="Kasi Pelayanan">
+                <h3>Kasi Pelayanan</h3>
+                <p>An'im Falahudin</p>
+            </div>
+
+            <div class="perangkat-card">
+                <img src="assets/img/kesra.jpeg" alt="Kasi Kesejahteraan">
+                <h3>Kasi Kesejahteraan</h3>
+                <p>Iip Jenal Aripin</p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+<footer
+    class="bg-[#172d5c] text-white text-center py-4 mt-10 text-sm"> Created by KKN 65 Cibalanarik
+</footer>
+
+</html>

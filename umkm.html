@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>UMKM Desa • Desa Cibalanarik</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS khusus UMKM -->
+    <link rel="stylesheet" href="assets/css/umkm.css">
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- ===================== NAVBAR FINAL ===================== -->
+    <header class="w-full shadow bg-white sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+            <!-- Logo -->
+            <div class="text-xl font-bold text-[#172d5c]">Desa Cibalanarik</div>
+
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+                <li><a href="index.html" class="hover:text-[#172d5c]">Beranda</a></li>
+                <li><a href="profil-desa.html" class="hover:text-[#172d5c]">Profil Desa</a></li>
+                <li><a href="pemerintahan.html" class="hover:text-[#172d5c]">Pemerintahan</a></li>
+
+                <!-- Dropdown -->
+                <li class="relative">
+                    <button id="dropdown-btn" class="hover:text-[#172d5c] flex items-center gap-1">
+                        Potensi Desa ▾
+                    </button>
+                    <ul id="dropdown-menu" class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded hidden">
+                        <li><a href="wisata.html" class="block px-4 py-2 hover:bg-gray-100">Wisata</a></li>
+                        <li><a href="umkm.html" class="block px-4 py-2 bg-gray-100 font-semibold text-[#172d5c]">UMKM</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="peta.html" class="hover:text-[#172d5c]">Peta Digital</a></li>
+                <li><a href="galeri.html" class="hover:text-[#172d5c]">Galeri</a></li>
+                <li><a href="kegiatan-kkn.html" class="hover:text-[#172d5c]">Kegiatan KKN</a></li>
+            </ul>
+
+            <!-- Mobile Button -->
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-700" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow">
+            <ul class="flex flex-col text-gray-700 font-medium">
+
+                <li><a href="index.html" class="px-4 py-2 border-b">Beranda</a></li>
+                <li><a href="profil-desa.html" class="px-4 py-2 border-b">Profil Desa</a></li>
+                <li><a href="pemerintahan.html" class="px-4 py-2 border-b">Pemerintahan</a></li>
+
+                <li class="border-b">
+                    <details class="px-4 py-2">
+                        <summary class="cursor-pointer">Potensi Desa</summary>
+                        <ul class="mt-2 ml-4">
+                            <li><a href="wisata.html" class="block py-1">Wisata</a></li>
+                            <li><a href="umkm.html" class="block py-1 text-[#172d5c] font-semibold">UMKM</a></li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li><a href="peta.html" class="px-4 py-2 border-b">Peta Digital</a></li>
+                <li><a href="galeri.html" class="px-4 py-2 border-b">Galeri</a></li>
+                <li><a href="kegiatan-kkn.html" class="px-4 py-2 border-b">Kegiatan KKN</a></li>
+            </ul>
+        </div>
+
+        <!-- Scripts -->
+        <script>
+            document.getElementById('menu-btn').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+
+            const dropBtn = document.getElementById("dropdown-btn");
+            const dropMenu = document.getElementById("dropdown-menu");
+
+            dropBtn.addEventListener("click", () => {
+                dropMenu.classList.toggle("hidden");
+            });
+
+            document.addEventListener("click", function(e) {
+                if (!dropBtn.contains(e.target) && !dropMenu.contains(e.target)) {
+                    dropMenu.classList.add("hidden");
+                }
+            });
+        </script>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="umkm-hero">
+        <div class="text-center text-white px-6">
+            <h1 class="text-4xl font-bold mb-4">UMKM Desa Cibalanarik</h1>
+            <p class="max-w-2xl mx-auto text-lg opacity-90">
+                Menampilkan daftar pelaku UMKM lokal yang menjadi penggerak ekonomi desa.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================== DAFTAR UMKM ===================== -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+
+        <h2 class="section-title">Daftar UMKM Desa</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+
+            <!-- UMKM Card -->
+            <div class="umkm-card">
+                <img src="assets/img/tahu.jpg" alt="UMKM 1">
+                <div class="card-body">
+                    <h3>Pabrik Tahu</h3>
+                    <p class="owner"> H.Iis Ishaq</p>
+                    <p class="Lokasi"> Kp.Cibalanarik Rt21 Rw06 Desa Cibalanarik Kec.Tanjungjaya</p>
+                    <p class="kategori"> Makanan & Minuman</p>
+                    <a href="#" class="detail-btn">Lihat Detail →</a>
+                </div>
+            </div>
+
+            <div class="umkm-card">
+                <img src="assets/img/aci.jpeg" alt="UMKM 2">
+                <div class="card-body">
+                    <h3>Pabrik Tepung Tapioka (Aci)  </h3>
+                    <p class="owner">Haji Munawaroh</p>
+                    <p class="Lokasi">Kp.Cibalanarik Rt35 Rw06 Desa Cibalanarik Kec.Tanjungjaya</p>
+                    <p class="kategori">Bahan baku</p>
+                    <a href="#" class="detail-btn">Lihat Detail →</a>
+                </div>
+            </div>
+
+            <div class="umkm-card">
+                <img src="assets/img/batok kalapa.JPG" alt="UMKM 3">
+                <div class="card-body">
+                    <h3>Kerajinan Batok Kelapa</h3>
+                    <p class="owner">Bapak Ucu</p>
+                    <p class="Lokasi">Kp.Cileungsing Rt18 Rw09 Desa Cibalanarik Kec.Tanjungjaya</p>
+                    <p class="kategori">Kerajinan</p>
+                    <a href="#" class="detail-btn">Lihat Detail →</a>
+                </div>
+            </div>
+
+            <div class="umkm-card">
+                <img src="assets/img/skotlet.JPG" alt="UMKM 4">
+                <div class="card-body">
+                    <h3>Skotlet</h3>
+                    <p class="owner">Engkus Kusnadi</p>
+                    <p class="Lokasi">Kp.Rancakawung Rt08 Rw03 Desa Cibalanarik Kec.Tanjungjaya</p>
+                    <p class="kategori">Variasi mobil dan motor</p>
+                    <a href="#" class="detail-btn">Lihat Detail →</a>
+                </div>
+            </div>
+
+            <div class="umkm-card">
+                <img src="assets/img/bordir.JPG"UMKM 5">
+                <div class="card-body">
+                    <h3>Bordir</h3>
+                    <p class="owner">Ibu Omih</p>
+                    <p class="Lokasi">Kp.Ciloklak Rt13 Rw07 Desa Cibalanarik Kec.Tanjungjaya</p>
+                    <p class="kategori">Mukena dan gamis</p>
+                    <a href="#" class="detail-btn">Lihat Detail →</a>
+                </div>
+            </div>
+
+            <div class="umkm-card">
+                <img src="assets/img/combro.jpg" alt="UMKM 6">
+                <div class="card-body">
+                    <h3>Combro</h3>
+                    <p class="owner">Ibu Jaja</p>
+                    <p class="Lokasi">Kp.Ciloklak Rt13 Rw07 Desa Cibalanarik Kec.Tanjungjaya</p>
+                    <p class="kategori">Makanan</p>
+                    <a href="#" class="detail-btn">Lihat Detail →</a>
+                </div>
+            </div>
+
+            <div class="umkm-card">
+                <img src="assets/img/comet.jpg" alt="UMKM 7">
+                <div class="card-body">
+                    <h3>Comet</h3>
+                    <p class="owner">H.Iis Ishaq</p>
+                    <p class="Lokasi">Kp.Cibalanarik Rt35 Rw06 Desa Cibalanarik Kec.Tanjungjaya</p>
+                    <p class="kategori">Makanan</p>
+                    <a href="#" class="detail-btn">Lihat Detail →</a>
+                </div>
+            </div>
+
+            <div class="umkm-card">
+                <img src="assets/img/sale pisang.jpeg" alt="UMKM 8">
+                <div class="card-body">
+                    <h3>Sale Pisang</h3>
+                    <p class="owner">H.Iis Ishaq</p>
+                    <p class="Lokasi">Kp Cibalanarik Desa Cibalanarik Rt35 Rw06</p>
+                    <p class="kategori">Makanan</p>
+                    <a href="#" class="detail-btn">Lihat Detail →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+<footer
+    class="bg-[#172d5c] text-white text-center py-4 mt-10 text-sm"> Created by KKN 65 Cibalanarik
+</footer>
+
+</html>
