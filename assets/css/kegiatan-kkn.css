@@ -30,13 +30,6 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
-.foto-bersama img {
-  width: 100%;
-  object-position: center 50%;
-  height: 320px;        /* landscape */
-  object-fit: cover;
-}
-
 
 /* <===========STRUKTUR KKN ===========>*/
 .struktur-kkn {
@@ -66,14 +59,6 @@
   padding: 25px 20px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 18px;
 }
 
 .card h3 {
@@ -164,13 +149,15 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.kkn-card img {
-    overflow: hidden;
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    transition: transform 0.35s ease;
+/* SEMUA GAMBAR GALERI & STRUKTUR */
+.kkn-card img,
+.card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;   /* rasio tetap */
+  object-fit: cover;
+  object-position: center;
 }
+
 
 .kkn-card p {
     padding: 12px 15px;
